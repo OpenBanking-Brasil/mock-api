@@ -20,11 +20,11 @@ Options to run:
 
 2. Fork this repository on Github.
 
-3. Clone your forked repository (not our original one) to your hard drive with git clone https://github.com/YOURUSERNAME/automacao-mock.git
+3. Clone your forked repository (not our original one) to your hard drive with git clone https://github.com/YOURUSERNAME/mock-api.git
 
 4. Access directory automacao-mock. 
 ```bash
-cd automacao-mock
+cd mock-api
 ```
 
 5. Run the command bellow to start all containers. We have a container for each Open Banking Api. 
@@ -37,7 +37,7 @@ This command will run the containers with de last released version of swaggers.
 Alternatively it's possible to run a docker container individually.Example:
 
 ```bash
-docker run -p [PORT:PORT] eumagnun/admin-api:[VERSAO]
+docker run -p [PORT:PORT] openbankingbrasil/admin-api:[VERSAO]
 ```
 
 [PORT]: Each API-MOCK runs ina specific port as follows:
@@ -51,7 +51,7 @@ docker run -p [PORT:PORT] eumagnun/admin-api:[VERSAO]
 
 Follows bellow a example:
 ```bash
-docker run -p 7001:7001 eumagnun/admin-api:ver2020.01.18.002
+docker run -p 7001:7001 openbankingbrasil/admin-api:ver2020.01.18.002
 ```
 
 
@@ -89,7 +89,7 @@ If ok, one message like that is appear:
 4. Downloads an image of [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock)
 
 ```bash
-docker pull eumagnun/admin-api:ver2020.01.18.002
+docker pull openbankingbrasil/admin-api:ver2020.01.18.002
 ```
 
 ![Figura 5](/img/fig-05.jpg)
@@ -102,7 +102,7 @@ docker pull eumagnun/admin-api:ver2020.01.18.002
 
 7. Access directory automacao-mock. 
 ```bash
-cd automacao-mock
+cd mock-api
 ```
 
 ![Figura 6](/img/fig-06.jpg)
@@ -117,7 +117,7 @@ docker-compose up
 Alternatively it's possible to run as a docker command:<br/>
 
 ```bash
-docker run -p 8080:7001 eumagnun/admin-api:ver2020.01.18.002
+docker run -p 8080:7001 openbankingbrasil/admin-api:ver2020.01.18.002
 ```
 
 9. At the end of the process you should see the message such as "Creating openapi_mock ... done". The option -p 8080:7001 exposes the container port 7001 as the host port 8080 to the world.
