@@ -1,6 +1,6 @@
 # Project: openapi-mock-open-banking
 
-## About this
+## About
 This project allows users to run Open Banking Mocked Apis. This mocks are made with [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock).
 
 Options to run:
@@ -15,7 +15,7 @@ Options to run:
 * [PWD - Play With Docker](https://labs.play-with-docker.com/) (It's alternative to expose the mock through internet running in the cloud).
 
 
-## Getting started to run on local machine
+## Option 1 - Getting started to run on local machine
 1. Download and install [Docker](https://www.docker.com/).
 
 2. Fork this repository on Github.
@@ -73,7 +73,7 @@ If ok, one message like that is appear:
 
 
 
-## Getting started to run in the cloud using PWD - Play with Docker
+## Option 2 - Getting started to run in the cloud using PWD - Play with Docker
 1. Access [PWD](https://labs.play-with-docker.com/) and start a new session with your [Docker Hub](https://hub.docker.com/) credentials.
 
 ![Figura 2](/img/fig-02.jpg)
