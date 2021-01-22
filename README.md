@@ -145,4 +145,4 @@ If ok, one message like that is appear:
 - [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock)
 - [Docker](https://www.docker.com/)
 - [PWD - Play With Docker](https://labs.play-with-docker.com/)
-- [OpenBankingBrasil DockerHub] (https://hub.docker.com/u/openbankingbrasil)
+- [OpenBankingBrasil DockerHub](https://hub.docker.com/u/openbankingbrasil)
