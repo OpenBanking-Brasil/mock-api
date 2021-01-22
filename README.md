@@ -5,7 +5,7 @@ This project allows users to run Open Banking Mocked Apis. This mocks are made w
 
 Options to run:
 - 1 - [Docker based on local machines](#option-1---getting-started-to-run-on-local-machine) or;
-- 2 - [PWD - Play with Docker](#option-2---getting-started-to-run-in-the-cloud)*.
+- 2 - [PWD - Play with Docker](#option-2---getting-started-to-run-in-the-cloud-using-pwd---play-with-docker)*.
 
 *PWD is a Docker playground which allows users to run Docker commands in a matter of seconds.
 
