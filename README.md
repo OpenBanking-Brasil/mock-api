@@ -4,8 +4,8 @@
 This project allows users to run Open Banking Mocked Apis. This mocks are made with [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock).
 
 Options to run:
-- 1 - [Docker based on local machines](#getting-started-to-run-on-local-machine) or;
-- 2 - [PWD - Play with Docker](#getting-started-to-run-in-the-cloud)*.
+- 1 - [Docker based on local machines](#option-1---getting-started-to-run-on-local-machine) or;
+- 2 - [PWD - Play with Docker](#option-2---getting-started-to-run-in-the-cloud)*.
 
 *PWD is a Docker playground which allows users to run Docker commands in a matter of seconds.
 
