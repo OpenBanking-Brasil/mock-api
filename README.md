@@ -7,7 +7,6 @@ Opções para execução:
 - 1 - [Container Docker local](#option-1---getting-started-to-run-on-local-machine) or;
 - 2 - [Container Docker via PWD-Play with Docker](#option-2---getting-started-to-run-in-the-cloud-using-pwd---play-with-docker)*.
 
-*PWD is a Docker playground which allows users to run Docker commands in a matter of seconds.
 PWD é uma solução de sandbox do Docker que possibilita a execução de containers para fins de testes em segundos.
 
 
@@ -31,11 +30,10 @@ cd mock-api
 ```
 
 5. Rode o comando abaixo para iniciar todos os containers. Existe um container para cada uma das API´s.
-
-This command will download the images and run the containers with de swagger versions  contained in the .env file. By the default this versions is the last published version.
+</br>
 Esse comando irá baixar as imagens e executar os containers, a versão dos Swaggers considerada será a que consta no arquivo ".env" Por padrão essa versão corresponde com a última publicada.
 
-Se for necessário rodar os container com uma versão especifica basta editar o arquivo ".env" antes de executar o comando abaixo:
+Se for necessário rodar os containers com uma versão especifica basta editar o arquivo ".env" antes de executar o comando abaixo:
 
 ```bash
 docker-compose up
@@ -62,7 +60,6 @@ Exemplo completo abaixo:
 docker run -p 7001:7001 openbankingbrasil/admin-api:v1-0-0-rc5-4
 ```
 
-7. Check if mock running typing this URL in your web browser:
 7. Informe a URL abaixo a fim de verificar se o mock está em execução corretamente.
 
 ```
@@ -75,14 +72,13 @@ Outra opção é executar se o mock está OK através do CURL:
 curl http://localhost:7001/open-banking/admin/v1/metrics
 ```
 
-If ok, you will see the mocked response:
 Se tudo estiver OK, você receba uma resposta para a requisição semelhante a esta:
 
 ![Figura 1](/img/fig-01.jpg)
 
 
 ## Opção 2 - Rodando  o container na nuvem com PWD - Play with Docker
-1. Accesse [PWD](https://labs.play-with-docker.com/) and inicie uma nova sessão com suas credências do [Docker Hub](https://hub.docker.com/).
+1. Acesse [PWD](https://labs.play-with-docker.com/) and inicie uma nova sessão com suas credências do [Docker Hub](https://hub.docker.com/).
 
 ![Figura 2](/img/fig-02.jpg)
 
