@@ -1,124 +1,123 @@
-# Project: OpenBanking-Brasil | mock-api
+# Projeto: OpenBanking-Brasil | mock-api
 
-## About
-This project allows users to run Open Banking Mocked Apis. This mocks are made with [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock).
+## Sobre
+Esse projeto viabiliza a execução de mocks das apis Open Banking Brasil. Esses mocks são gerados com base na documentação Swagger official através do [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock).
 
-Options to run:
-- 1 - [Docker based on local machines](#option-1---getting-started-to-run-on-local-machine) or;
-- 2 - [PWD - Play with Docker](#option-2---getting-started-to-run-in-the-cloud-using-pwd---play-with-docker)*.
+Opções para execução:
+- 1 - [Container Docker local](#option-1---getting-started-to-run-on-local-machine) or;
+- 2 - [Container Docker via PWD-Play with Docker](#option-2---getting-started-to-run-in-the-cloud-using-pwd---play-with-docker)*.
 
-*PWD is a Docker playground which allows users to run Docker commands in a matter of seconds.
+PWD é uma solução de sandbox do Docker que possibilita a execução de containers para fins de testes em segundos.
 
 
-## Dependencies
+## Dependências
 * [Docker](https://www.docker.com/)
 * [PWD - Play With Docker](https://labs.play-with-docker.com/) (It's alternative to expose the mock through internet running in the cloud).
 
 
-## Option 1 - Getting started to run on local machine
-1. Download and install [Docker](https://www.docker.com/).
+## Opção 1 - Rodando o container Docker localmente
+1. Baixe e instale o [Docker](https://www.docker.com/).
 
-2. Fork this repository on Github.
+2. Crie um fork desse repositório no Github.
 
-3. Clone your forked repository (not our original one) to your hard drive with 
+3. Clone seu repositório forked (não o original) para sua máquina 
 ```bash
 git clone https://github.com/YOURUSERNAME/mock-api.git
 ```
-4. Access directory mock-api. 
+4. Accesse o diretório mock-api. 
 ```bash
 cd mock-api
 ```
 
-5. Run the command bellow to start all containers. We have a container for each OpenBankingBrasil API.
+5. Rode o comando abaixo para iniciar todos os containers. Existe um container para cada uma das API´s.
+</br>
+Esse comando irá baixar as imagens e executar os containers, a versão dos Swaggers considerada será a que consta no arquivo ".env" Por padrão essa versão corresponde com a última publicada.
+
+Se for necessário rodar os containers com uma versão especifica basta editar o arquivo ".env" antes de executar o comando abaixo:
 
 ```bash
 docker-compose up
 ```
-This command will download the images and run the containers with de swagger versions  contained in the .env file. By the default this versions is the last published version.
 
-If you want to run all the container with a specific version, please edit the file ".env"
-</br>
-</br>
-
-6. Alternatively is possible to run a docker container individually with the comand below:
+6. Também é possível rodar um container Docker isoladamente com o comando abaixo:
 
 ```bash
 docker run -p [PORT:PORT] openbankingbrasil/admin-api:[VERSAO]
 ```
 
-[PORT]: Each API-MOCK listen on a specific port as follows:
+[PORT]: Cada API-MOCK escuta em uma porta conforme segue:
 
 - ADMIN_API: "7001"
 - CHANNELS_API: "7002"
 - COMMON_API: "7003"
 - PRODUCTS_SERVICES_API: "7004"
 
-[VERSION]: The version of Open Banking Specification. </br>
-Important: This field is required, today we´re not publishing a tag 'latest'.<br/>
+[VERSION]: Aqui deve ser informado a versão do Swagger do Open Banking Brasil a ser utilizada</br>
+Importante: A versão precisa ser informada de forma explicita, hoje não publicamos imagens Docker com a tag "latest".<br/>
 
-Follows bellow a example:
+Exemplo completo abaixo:
 ```bash
 docker run -p 7001:7001 openbankingbrasil/admin-api:v1-0-0-rc5-4
 ```
 
-7. Check if mock running typing this URL in your web browser:
+7. Informe a URL abaixo a fim de verificar se o mock está em execução corretamente.
 
 ```
 http://localhost:7001/open-banking/discovery/v1/status
 ```
 
-Alternatively it's possible check if run using this command to test:
+Outra opção é executar se o mock está OK através do CURL:
 
 ```bash
 curl http://localhost:7001/open-banking/admin/v1/metrics
 ```
 
-If ok, you will see the mocked response:
+Se tudo estiver OK, você receba uma resposta para a requisição semelhante a esta:
 
 ![Figura 1](/img/fig-01.jpg)
 
 
-
-## Option 2 - Getting started to run in the cloud using PWD - Play with Docker
-1. Access [PWD](https://labs.play-with-docker.com/) and start a new session with your [Docker Hub](https://hub.docker.com/) credentials.
+## Opção 2 - Rodando  o container na nuvem com PWD - Play with Docker
+1. Acesse [PWD](https://labs.play-with-docker.com/) and inicie uma nova sessão com suas credências do [Docker Hub](https://hub.docker.com/).
 
 ![Figura 2](/img/fig-02.jpg)
 
 
-2. Once your session is active click on "Add New Instance".
+2. Uma vez logado, clique em "Add New Instance".
 
 ![Figura 3](/img/fig-03.jpg)
 
-3. A new instance will start with a Docker Engine ready to accept commands.
+3. Uma nova instância será iniciada com o Docker pronto para uso.
 
 ![Figura 4](/img/fig-04.jpg)
 
-4. Now run the comand below:
+4. Agora rode o comando abaixo:
 
 ```bash
 docker run -p 7001:7001 openbankingbrasil/admin-api:v1-0-0-rc5-4
 ```
-Docker will start to download the images e run the container. At the end,  the console will show the message "Starting server on port 7001".
+
+O Docker vai realizar o download da imagem e iniciar o container. No fim do processo será exibida a mensagem "Starting server on port 7001".
 
 ![Figura 5](/img/fig-05.jpg)
 
-5. Now you can click on the port 7001 highlighted.
+5. Agora é possível clicar na porta 7001 conforme destacado abaixo:
 
 ![Figura 11](/img/fig-11.jpg)
 
-6. So, you will see a white screen with this message.
+6. Será exibida uma tela branca com a seguinte mensagem:
 
 ![Figura 6](/img/fig-12.jpg)
 
-7. Complement the url with the path of one of the API. And you will see the mocked response.
+7. Complemente a URL com o path de alguma API conforme exemplo. Será exibida a resposta mockada.
 
 ![Figura 6](/img/fig-10.jpg)
 
-8. All the API paths can be found on the [Open Banking Developer Portal](https://openbanking-brasil.github.io/areadesenvolvedor/#apis-comuns-canais-de-atendimento-eletronico)
+8. Todos as url´s das API´s podem ser verificadas em [Open Banking Developer Portal](https://openbanking-brasil.github.io/areadesenvolvedor/#apis-comuns-canais-de-atendimento-eletronico)
 
 ![Figura 7](/img/fig-07.jpg)
 
-## REFERENCES
+## REFERÊNCIAS
 - [Open Banking Brasil DockerHub](https://hub.docker.com/u/openbankingbrasil)
 - [Open Banking Brasil Developer Portal](https://openbanking-brasil.github.io/areadesenvolvedor/#apis-comuns-canais-de-atendimento-eletronico)
 - [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock)
