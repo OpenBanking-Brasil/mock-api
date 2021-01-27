@@ -109,7 +109,7 @@ O Docker vai realizar o download da imagem e iniciar o container. No fim do proc
 
 ![Figura 6](/img/fig-12.jpg)
 
-7. Complemente a URL com o path de alguma API conforme exemplo. Será exibida a resposta mockada.
+7. Complemente a URL com o path de algum recurso da API em execução, nesse caso da api ADMIN. Será exibida uma resposta mockada conforme abaixo.
 
 ![Figura 6](/img/fig-10.jpg)
 
