@@ -39,7 +39,7 @@ Se for necessário rodar os containers com uma versão especifica basta editar o
 docker-compose up
 ```
 
-6. Também é possivel rodar um container Docker isoladamente com o comando abaixo:
+6. Também é possível rodar um container Docker isoladamente com o comando abaixo:
 
 ```bash
 docker run -p [PORT:PORT] openbankingbrasil/admin-api:[VERSAO]
@@ -101,7 +101,7 @@ O Docker vai realizar o download da imagem e iniciar o container. No fim do proc
 
 ![Figura 5](/img/fig-05.jpg)
 
-5. Agora é possivel clicar na porta 7001 conforme destacado abaixo:
+5. Agora é possível clicar na porta 7001 conforme destacado abaixo:
 
 ![Figura 11](/img/fig-11.jpg)
 
@@ -109,7 +109,7 @@ O Docker vai realizar o download da imagem e iniciar o container. No fim do proc
 
 ![Figura 6](/img/fig-12.jpg)
 
-7. Complemente a url com o path de alguma API conforme exemplo. Será exibida a resposta mockada.
+7. Complemente a URL com o path de alguma API conforme exemplo. Será exibida a resposta mockada.
 
 ![Figura 6](/img/fig-10.jpg)
 
