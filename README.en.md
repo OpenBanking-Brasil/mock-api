@@ -58,7 +58,7 @@ Important: This field is required, today we´re not publishing a tag 'latest'.<b
 
 Follows bellow a example:
 ```bash
-docker run -p 7001:7001 openbankingbrasil/admin-api:v1-0-0-rc5-4
+docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
 ```
 
 7. Check if mock running typing this URL in your web browser:
@@ -96,7 +96,7 @@ If ok, you will see the mocked response:
 4. Now run the comand below:
 
 ```bash
-docker run -p 7001:7001 openbankingbrasil/admin-api:v1-0-0-rc5-4
+docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
 ```
 Docker will start to download the images e run the container. At the end,  the console will show the message "Starting server on port 7001".
 

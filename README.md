@@ -57,7 +57,7 @@ Importante: A versão precisa ser informada de forma explicita, hoje não public
 
 Exemplo completo abaixo:
 ```bash
-docker run -p 7001:7001 openbankingbrasil/admin-api:v1-0-0-rc5-4
+docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
 ```
 
 7. Informe a URL abaixo a fim de verificar se o mock está em execução corretamente.
@@ -94,7 +94,7 @@ Se tudo estiver OK, você receba uma resposta para a requisição semelhante a e
 4. Agora rode o comando abaixo:
 
 ```bash
-docker run -p 7001:7001 openbankingbrasil/admin-api:v1-0-0-rc5-4
+docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
 ```
 
 O Docker vai realizar o download da imagem e iniciar o container. No fim do processo será exibida a mensagem "Starting server on port 7001".
@@ -109,7 +109,7 @@ O Docker vai realizar o download da imagem e iniciar o container. No fim do proc
 
 ![Figura 6](/img/fig-12.jpg)
 
-7. Complemente a URL com o path de alguma API conforme exemplo. Será exibida a resposta mockada.
+7. Complemente a URL com o path de algum recurso da API em execução, nesse caso da api ADMIN. Será exibida uma resposta mockada conforme abaixo.
 
 ![Figura 6](/img/fig-10.jpg)
 
