@@ -2,7 +2,7 @@
 
 
 ## Sobre
-Esse projeto viabiliza a execução de mocks das apis Open Banking Brasil. Esses mocks são gerados com base na documentação Swagger official através do [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock).
+Esse projeto viabiliza a execução de mocks das apis Open Banking Brasil. Esses mocks são gerados com base na documentação Swagger oficial através do [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock).
 
 Opções para execução:
 - 1 - [Container Docker local](#option-1---getting-started-to-run-on-local-machine) or;
