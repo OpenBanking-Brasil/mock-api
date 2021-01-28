@@ -1,7 +1,5 @@
 # Projeto: OpenBanking-Brasil | mock-api
 
-## Versão em inglês
-[Readme-EN](/README.en.MD)
 
 ## Sobre
 Esse projeto viabiliza a execução de mocks das apis Open Banking Brasil. Esses mocks são gerados com base na documentação Swagger official através do [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock).
