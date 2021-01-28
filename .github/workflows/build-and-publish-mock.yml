@@ -38,54 +38,31 @@ jobs:
         with:
             buildkitd-flags: --debug      
         
-      - name: Build and push docker image for Open Banking Admin Api
-        id: docker_build_admin_api
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+
+      - run: npm install -g @apidevtools/swagger-cli
+
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_admin_apis_part.yml --outfile source/swagger/swagger_admin_apis.yaml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_channels_apis_part.yml --outfile source/swagger/swagger_channels_apis.yaml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_common_apis_part.yml --outfile source/swagger/swagger_common_apis.yaml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_products_services_apis_part.yml --outfile source/swagger/swagger_products_services_apis.yaml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_open_banking_apis_part.yml --outfile source/swagger/swagger_open_banking_apis.yml --type=yaml
+
+
+      - name: Build and push docker image for Open Banking Apis
+        id: docker_open_banking_apis
         uses: docker/build-push-action@v2
         with:
           context: .
           file: ./Dockerfile
           tags: ${{ env.DOCKER_HUB_DOMAIN }}/admin-api:${{ github.event.client_payload.tagName }}
           build-args: |
-            api_swagger_path=openbanking/documentation/source/swagger/swagger_admin_apis.yaml
+            api_swagger_path=openbanking/documentation/source/swagger/swagger_open_banking_apis.yml
             api_port=${{ env.ADMIN_API_PORT }}
           push: true
         
-      - name: Build and push docker image for Open Banking Channels Api
-        id: docker_build_channels_api
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          tags: ${{ env.DOCKER_HUB_DOMAIN }}/channels-api:${{ github.event.client_payload.tagName }}
-          build-args: |
-            api_swagger_path=openbanking/documentation/source/swagger/swagger_channels_apis.yaml
-            api_port=${{ env.CHANNELS_API_PORT }}
-          push: true
-        
-      - name: Build and push docker image for Open Banking Common Api
-        id: docker_build_common_api
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          tags: ${{ env.DOCKER_HUB_DOMAIN }}/common-api:${{ github.event.client_payload.tagName }}
-          build-args: |
-            api_swagger_path=openbanking/documentation/source/swagger/swagger_common_apis.yaml
-            api_port=${{ env.COMMON_API_PORT }}
-          push: true
-        
-      - name: Build and push docker image for Open Banking Products Services Api
-        id: docker_build_products_services_api
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          tags: ${{ env.DOCKER_HUB_DOMAIN }}/products-services-api:${{ github.event.client_payload.tagName }}
-          build-args: |
-            api_swagger_path=openbanking/documentation/source/swagger/swagger_products_services_apis.yaml
-            api_port=${{ env.PRODUCTS_SERVICES_API_PORT }}
-          push: true
-
       - name: Update version mock in file
         run: |
           echo API_VERSION=${{ github.event.client_payload.tagName }} > .env
