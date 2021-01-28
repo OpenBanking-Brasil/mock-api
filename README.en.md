@@ -12,11 +12,12 @@ Options to run:
 
 ## Dependencies
 * [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 * [PWD - Play With Docker](https://labs.play-with-docker.com/) (It's alternative to expose the mock through internet running in the cloud).
 
 
 ## Option 1 - Getting started to run on local machine
-1. Download and install [Docker](https://www.docker.com/).
+1. Download and install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/)
 
 2. Fork this repository on Github.
 
@@ -29,39 +30,17 @@ git clone https://github.com/YOURUSERNAME/mock-api.git
 cd mock-api
 ```
 
-5. Run the command bellow to start all containers. We have a container for each OpenBankingBrasil API.
+5. Run the command bellow to start the container. 
 
 ```bash
 docker-compose up
 ```
-This command will download the images and run the containers with de swagger versions  contained in the .env file. By the default this versions is the last published version.
+This command will download the image and run the container with de swagger version  contained in the ".env" file. By default this version is the last published version.
 
-If you want to run all the container with a specific version, please edit the file ".env"
 </br>
 </br>
 
-6. Alternatively is possible to run a docker container individually with the comand below:
-
-```bash
-docker run -p [PORT:PORT] openbankingbrasil/admin-api:[VERSAO]
-```
-
-[PORT]: Each API-MOCK listen on a specific port as follows:
-
-- ADMIN_API: "7001"
-- CHANNELS_API: "7002"
-- COMMON_API: "7003"
-- PRODUCTS_SERVICES_API: "7004"
-
-[VERSION]: The version of Open Banking Specification. </br>
-Important: This field is required, today we´re not publishing a tag 'latest'.<br/>
-
-Follows bellow a example:
-```bash
-docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
-```
-
-7. Check if mock running typing this URL in your web browser:
+6. Check if mock running typing this URL in your web browser:
 
 ```
 http://localhost:7001/open-banking/discovery/v1/status
@@ -70,7 +49,7 @@ http://localhost:7001/open-banking/discovery/v1/status
 Alternatively it's possible check if run using this command to test:
 
 ```bash
-curl http://localhost:7001/open-banking/admin/v1/metrics
+curl http://localhost:7001/open-banking/discovery/v1/status
 ```
 
 If ok, you will see the mocked response:
@@ -96,7 +75,7 @@ If ok, you will see the mocked response:
 4. Now run the comand below:
 
 ```bash
-docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
+docker run -p 7001:7001 openbankingbrasil/open-banking:v1.0.0-rc5.3
 ```
 Docker will start to download the images e run the container. At the end,  the console will show the message "Starting server on port 7001".
 

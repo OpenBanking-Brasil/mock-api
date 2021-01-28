@@ -1,21 +1,6 @@
 
 services:
-  admin-api:
-    image: "openbankingbrasil/admin-api:${API_VERSION}"
+  open-banking:
+    image: "${DOCKER_HUB_DOMAIN}/open-banking:${API_VERSION}"
     ports:
       - "7001:7001"  
-      
-  channels-api:
-    image: "openbankingbrasil/channels-api:${API_VERSION}"
-    ports:
-      - "7002:7002"
-  
-  common-api:
-    image: "openbankingbrasil/common-api:${API_VERSION}"
-    ports:
-      - "7003:7003"
-  
-  products-services-api:
-    image: "openbankingbrasil/products-services-api:${API_VERSION}"
-    ports:
-      - "7004:7004"
