@@ -1,5 +1,8 @@
 # Project: OpenBanking-Brasil | mock-api
 
+## Version in pt-br
+[Readme-EN](/README.en.MD)
+
 ## About
 This project allows users to run Open Banking Mocked Apis. This mocks are made with [OpenAPI Mock Server](https://github.com/muonsoft/openapi-mock).
 
