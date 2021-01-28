@@ -7,10 +7,8 @@ on:
 env:
     DOCKER_HUB_DOMAIN: ${{ secrets.DOCKER_HUB_USER_OPENBANKING }}
 
-    ADMIN_API_PORT: "7001"
-    CHANNELS_API_PORT: "7002"
-    COMMON_API_PORT: "7003"
-    PRODUCTS_SERVICES_API_PORT: "7004"
+    DEFAULT_API_PORT: "7001"
+  
 jobs:
 
   build:
@@ -44,11 +42,11 @@ jobs:
 
       - run: npm install -g @apidevtools/swagger-cli
 
-      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_admin_apis_part.yml --outfile source/swagger/swagger_admin_apis.yaml --type=yaml
-      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_channels_apis_part.yml --outfile source/swagger/swagger_channels_apis.yaml --type=yaml
-      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_common_apis_part.yml --outfile source/swagger/swagger_common_apis.yaml --type=yaml
-      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_products_services_apis_part.yml --outfile source/swagger/swagger_products_services_apis.yaml --type=yaml
-      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_open_banking_apis_part.yml --outfile source/swagger/swagger_open_banking_apis.yml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_admin_apis_part.yml --outfile openbanking/documentation/source/swagger/swagger_admin_apis.yaml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_channels_apis_part.yml --outfile openbanking/documentation/source/swagger/swagger_channels_apis.yaml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_common_apis_part.yml --outfile openbanking/documentation/source/swagger/swagger_common_apis.yaml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_products_services_apis_part.yml --outfile openbanking/documentation/source/swagger/swagger_products_services_apis.yaml --type=yaml
+      - run: swagger-cli bundle openbanking/documentation/source/swagger/parts/_open_banking_apis_part.yml --outfile openbanking/documentation/source/swagger/swagger_open_banking_apis.yml --type=yaml
 
 
       - name: Build and push docker image for Open Banking Apis
@@ -57,10 +55,10 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          tags: ${{ env.DOCKER_HUB_DOMAIN }}/admin-api:${{ github.event.client_payload.tagName }}
+          tags: ${{ env.DOCKER_HUB_DOMAIN }}/open-banking:${{ github.event.client_payload.tagName }}
           build-args: |
             api_swagger_path=openbanking/documentation/source/swagger/swagger_open_banking_apis.yml
-            api_port=${{ env.ADMIN_API_PORT }}
+            api_port=${{ env.DEFAULT_API_PORT }}
           push: true
         
       - name: Update version mock in file
