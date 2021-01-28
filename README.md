@@ -9,9 +9,9 @@ Opções para execução:
 
 PWD é uma solução de sandbox do Docker que possibilita a execução de containers para fins de testes em segundos.
 
-
 ## Dependências
 * [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 * [PWD - Play With Docker](https://labs.play-with-docker.com/) (It's alternative to expose the mock through internet running in the cloud).
 
 

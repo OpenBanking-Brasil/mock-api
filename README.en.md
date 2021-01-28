@@ -12,6 +12,7 @@ Options to run:
 
 ## Dependencies
 * [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 * [PWD - Play With Docker](https://labs.play-with-docker.com/) (It's alternative to expose the mock through internet running in the cloud).
 
 
@@ -64,7 +65,7 @@ docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
 7. Check if mock running typing this URL in your web browser:
 
 ```
-http://localhost:7001/open-banking/discovery/v1/status
+http://localhost:7003/open-banking/discovery/v1/status
 ```
 
 Alternatively it's possible check if run using this command to test:
