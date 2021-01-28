@@ -1,21 +1,6 @@
 
 services:
-  admin-api:
-    image: "${DOCKER_HUB_DOMAIN}/admin-api:${API_VERSION}"
+  open-banking:
+    image: "${DOCKER_HUB_DOMAIN}/open-banking:${API_VERSION}"
     ports:
       - "7001:7001"  
-      
-  channels-api:
-    image: "${DOCKER_HUB_DOMAIN}/channels-api:${API_VERSION}"
-    ports:
-      - "7002:7002"
-  
-  common-api:
-    image: "${DOCKER_HUB_DOMAIN}/common-api:${API_VERSION}"
-    ports:
-      - "7003:7003"
-  
-  products-services-api:
-    image: "${DOCKER_HUB_DOMAIN}/products-services-api:${API_VERSION}"
-    ports:
-      - "7004:7004"
