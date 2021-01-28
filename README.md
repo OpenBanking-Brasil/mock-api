@@ -13,11 +13,11 @@ PWD é uma solução de sandbox do Docker que possibilita a execução de contai
 ## Dependências
 * [Docker](https://www.docker.com/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
-* [PWD - Play With Docker](https://labs.play-with-docker.com/) (It's alternative to expose the mock through internet running in the cloud).
+* [PWD - Play With Docker](https://labs.play-with-docker.com/) (Alternativa para execução de Docker na nuvem).
 
 
 ## Opção 1 - Rodando o container Docker localmente
-1. Baixe e instale o [Docker](https://www.docker.com/).
+1. Baixe e instale o [Docker](https://www.docker.com/) e o [Docker Compose](https://docs.docker.com/compose/install/).
 
 2. Crie um fork desse repositório no Github.
 
@@ -30,41 +30,20 @@ git clone https://github.com/YOURUSERNAME/mock-api.git
 cd mock-api
 ```
 
-5. Rode o comando abaixo para iniciar todos os containers. Existe um container para cada uma das API´s.
+5. Rode o comando abaixo para iniciar o container. 
 </br>
-Esse comando irá baixar as imagens e executar os containers, a versão dos Swaggers considerada será a que consta no arquivo ".env" Por padrão essa versão corresponde com a última publicada.
+Esse comando irá baixar a imagem e executar o container, a versão do Swagger considerada será a que consta no arquivo ".env", por padrão essa versão corresponde à última publicada.
 
-Se for necessário rodar os containers com uma versão especifica basta editar o arquivo ".env" antes de executar o comando abaixo:
+Se for necessário rodar o mock com uma versão específica basta editar o arquivo ".env" antes de executar o comando abaixo:
 
 ```bash
 docker-compose up
 ```
 
-6. Também é possível rodar um container Docker isoladamente com o comando abaixo:
-
-```bash
-docker run -p [PORT:PORT] openbankingbrasil/admin-api:[VERSAO]
-```
-
-[PORT]: Cada API-MOCK escuta em uma porta conforme segue:
-
-- ADMIN_API: "7001"
-- CHANNELS_API: "7002"
-- COMMON_API: "7003"
-- PRODUCTS_SERVICES_API: "7004"
-
-[VERSION]: Aqui deve ser informado a versão do Swagger do Open Banking Brasil a ser utilizada</br>
-Importante: A versão precisa ser informada de forma explicita, hoje não publicamos imagens Docker com a tag "latest".<br/>
-
-Exemplo completo abaixo:
-```bash
-docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
-```
-
-7. Informe a URL abaixo a fim de verificar se o mock está em execução corretamente.
+6. Informe a URL abaixo a fim de verificar se o mock está em execução corretamente.
 
 ```
-http://localhost:7003/open-banking/discovery/v1/status
+http://localhost:7001/open-banking/discovery/v1/status
 ```
 
 Outra opção é executar se o mock está OK através do CURL:
@@ -95,7 +74,7 @@ Se tudo estiver OK, você receba uma resposta para a requisição semelhante a e
 4. Agora rode o comando abaixo:
 
 ```bash
-docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
+docker run -p 7001:7001 openbankingbrasil/open-banking:v1.0.0-rc5.3
 ```
 
 O Docker vai realizar o download da imagem e iniciar o container. No fim do processo será exibida a mensagem "Starting server on port 7001".
