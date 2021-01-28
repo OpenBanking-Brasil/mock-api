@@ -52,13 +52,13 @@ Outra opção é executar se o mock está OK através do CURL:
 curl http://localhost:7001/open-banking/admin/v1/metrics
 ```
 
-Se tudo estiver OK, você receba uma resposta para a requisição semelhante a esta:
+Se tudo estiver OK, você vai receber uma resposta para a requisição semelhante a esta:
 
 ![Figura 1](/img/fig-01.jpg)
 
 
 ## Opção 2 - Rodando  o container na nuvem com PWD - Play with Docker
-1. Acesse [PWD](https://labs.play-with-docker.com/) and inicie uma nova sessão com suas credências do [Docker Hub](https://hub.docker.com/).
+1. Acesse [PWD](https://labs.play-with-docker.com/) e inicie uma nova sessão com suas credênciais do [Docker Hub](https://hub.docker.com/).
 
 ![Figura 2](/img/fig-02.jpg)
 
@@ -89,7 +89,7 @@ O Docker vai realizar o download da imagem e iniciar o container. No fim do proc
 
 ![Figura 6](/img/fig-12.jpg)
 
-7. Complemente a URL com o path de algum recurso da API em execução, nesse caso da api ADMIN. Será exibida uma resposta mockada conforme abaixo.
+7. Complemente a URL com o path de algum recurso da API em execução, nesse caso, da api ADMIN. Será exibida uma resposta mockada conforme abaixo.
 
 ![Figura 6](/img/fig-10.jpg)
 
