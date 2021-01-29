@@ -5,6 +5,7 @@ USER root
 ARG api_swagger_path
 ARG api_port
 
+ENV OPENAPI_MOCK_USE_EXAMPLES=if_present
 ENV OPENAPI_MOCK_PORT=$api_port
 ADD $api_swagger_path /project/openbaking.yaml
 

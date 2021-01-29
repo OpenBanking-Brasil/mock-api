@@ -12,11 +12,12 @@ PWD é uma solução de sandbox do Docker que possibilita a execução de contai
 
 ## Dependências
 * [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 * [PWD - Play With Docker](https://labs.play-with-docker.com/) (It's alternative to expose the mock through internet running in the cloud).
 
 
 ## Opção 1 - Rodando o container Docker localmente
-1. Baixe e instale o [Docker](https://www.docker.com/).
+1. Baixe e instale o [Docker](https://www.docker.com/) e o [Docker Compose](https://docs.docker.com/compose/install/)..
 
 2. Crie um fork desse repositório no Github.
 
@@ -63,7 +64,7 @@ docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
 7. Informe a URL abaixo a fim de verificar se o mock está em execução corretamente.
 
 ```
-http://localhost:7001/open-banking/discovery/v1/status
+http://localhost:7001/open-banking/admin/v1/metrics
 ```
 
 Outra opção é executar se o mock está OK através do CURL:
