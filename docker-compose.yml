@@ -1,5 +1,6 @@
 
 services:
+
   admin-api:
     image: "${DOCKER_HUB_DOMAIN}/admin-api:${API_VERSION}"
     ports:
