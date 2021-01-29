@@ -72,7 +72,7 @@ http://localhost:7001/open-banking/admin/v1/metrics
 Alternatively it's possible check if run using this command to test:
 
 ```bash
-curl http://localhost:7001/open-banking/discovery/v1/status
+curl http://localhost:7001/open-banking/admin/v1/metrics
 ```
 
 If ok, you will see the mocked response:
