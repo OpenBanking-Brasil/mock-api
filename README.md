@@ -13,11 +13,11 @@ Opções para execução:
 ## Dependências
 * [Docker](https://www.docker.com/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
-* [PWD - Play With Docker](https://labs.play-with-docker.com/) (Alternativa para execução de Docker na nuvem).
+* [PWD - Play With Docker](https://labs.play-with-docker.com/) (It's alternative to expose the mock through internet running in the cloud).
 
 
 ## Opção 1 - Rodando o container Docker localmente
-1. Baixe e instale o [Docker](https://www.docker.com/) e o [Docker Compose](https://docs.docker.com/compose/install/).
+1. Baixe e instale o [Docker](https://www.docker.com/) e o [Docker Compose](https://docs.docker.com/compose/install/)..
 
 2. Crie um fork desse repositório no Github.
 
@@ -43,7 +43,7 @@ docker-compose up
 6. Informe a URL abaixo a fim de verificar se o mock está em execução corretamente.
 
 ```
-http://localhost:7001/open-banking/discovery/v1/status
+http://localhost:7001/open-banking/admin/v1/metrics
 ```
 
 Outra opção é executar se o mock está OK através do CURL:

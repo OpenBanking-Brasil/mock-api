@@ -64,9 +64,9 @@ jobs:
       - name: Update version mock in file
         run: |
           echo API_VERSION=${{ github.event.client_payload.tagName }} > .env
-          echo DOCKER_HUB_DOMAIN=${DOCKER_HUB_DOMAIN} >> .env 
+          echo DOCKER_HUB_DOMAIN=${DOCKER_HUB_DOMAIN} >> .env           
           git config user.name build-and-publish-mock
           git config user.email build-and-publish-mockgithub.com
           git add .
-          git commit -m "Update arquivo .env"
+          git commit -m "Update version on file .env"
           git push

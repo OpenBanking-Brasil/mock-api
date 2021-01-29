@@ -17,6 +17,7 @@ Options to run:
 
 
 ## Option 1 - Getting started to run on local machine
+
 1. Download and install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/)
 
 2. Fork this repository on Github.
@@ -40,10 +41,32 @@ This command will download the image and run the container with de swagger versi
 </br>
 </br>
 
-6. Check if mock running typing this URL in your web browser:
+6. Alternatively is possible to run a docker container individually with the comand below:
+
+```bash
+docker run -p [PORT:PORT] openbankingbrasil/admin-api:[VERSAO]
+```
+
+[PORT]: Each API-MOCK listen on a specific port as follows:
+
+- ADMIN_API: "7001"
+- CHANNELS_API: "7002"
+- COMMON_API: "7003"
+- PRODUCTS_SERVICES_API: "7004"
+
+[VERSION]: The version of Open Banking Specification. </br>
+Important: This field is required, today we´re not publishing a tag 'latest'.<br/>
+
+A example follows below:
+```bash
+docker run -p 7001:7001 openbankingbrasil/admin-api:v1.0.0-rc5.3
+```
+
+7. Check if mock running typing this URL in your web browser:
+=======
 
 ```
-http://localhost:7001/open-banking/discovery/v1/status
+http://localhost:7001/open-banking/admin/v1/metrics
 ```
 
 Alternatively it's possible check if run using this command to test:
